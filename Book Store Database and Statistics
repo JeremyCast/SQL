@@ -19,17 +19,18 @@ insert into bookstore values (14, "Self-help", 14, 6, 2, 14);
 insert into bookstore values (15, "history", 13, 6, 4, 15);
 
 -- Display database ordered by price
-select * from books
+select * from bookstore
 order by price;
 
 --Calculate average price of books
-select AVG(price) "AVG Book Price"
-from books;
+select AVG(price)
+as "Average Price"
+from bookstore;
 
 
 -- Display the five most popular items
 select name, price, popularity
-from books
+from bookstore
 order by popularity
 limit 5;
 
