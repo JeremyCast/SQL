@@ -1,6 +1,6 @@
 --Create database for a book store
 
-create table bookstore (id integer primary key, name text, price integer, aisle integer, shelf integer, popularity integer );
+create table bookstore (id integer primary key, genre text, price integer, aisle integer, shelf integer, popularity integer );
 
 insert into bookstore values (1, "childrens", 10, 1, 1, 4);
 insert into bookstore values (2, "biography", 25, 5, 5, 7);
@@ -29,8 +29,7 @@ from bookstore;
 
 
 -- Display the five most popular items
-select name, price, popularity
+select genre, price, popularity
 from bookstore
 order by popularity
 limit 5;
-
