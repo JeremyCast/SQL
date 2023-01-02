@@ -1,0 +1,35 @@
+--Create database for a book store
+
+create table bookstore (id integer primary key, name text, price integer, aisle integer, shelf integer, popularity integer );
+
+insert into bookstore values (1, "childrens", 10, 1, 1, 4);
+insert into bookstore values (2, "biography", 25, 5, 5, 7);
+insert into bookstore values (3, "Manga", 15, 2, 4, 1);
+insert into bookstore values (4, "Sci-fi", 20, 2, 3, 6);
+insert into bookstore values (5, "fantasy", 20, 3, 3, 3);
+insert into bookstore values (6, "Light Novels", 10, 2, 5, 5);
+insert into bookstore values (7, "YA Adventure", 15, 3, 4, 2);
+insert into bookstore values (8, "Dystopian", 15, 4, 3, 9);
+insert into bookstore values (9, "YA Mystery",16, 2, 2, 11);
+insert into bookstore values (10, "Horror", 20, 5, 4, 8);
+insert into bookstore values (11, "Historical Fiction", 18, 3, 2, 13);
+insert into bookstore values (12, "Romance", 17, 4, 2, 10);
+insert into bookstore values (13, "Short Stories", 12, 1, 3, 12);
+insert into bookstore values (14, "Self-help", 14, 6, 2, 14);
+insert into bookstore values (15, "history", 13, 6, 4, 15);
+
+-- Display database ordered by price
+select * from books
+order by price;
+
+--Calculate average price of books
+select AVG(price) "AVG Book Price"
+from books;
+
+
+-- Display the five most popular items
+select name, price, popularity
+from books
+order by popularity
+limit 5;
+
