@@ -44,3 +44,14 @@ group by artist_name, track_name
 order by popularity desc
 limit 10;
 
+-- Here I calculated the average popularity of the top 10 most popular artists on the chart
+
+with popularity_average_CTE AS ( select s.artist_name, avg(s.popularity) as average_popularity
+from SpotifyData s 
+group by s.artist_name
+)
+ 
+select  artist_name, average_popularity, 'Top Star' as tag
+from popularity_average_CTE
+where average_popularity>=90
+order by average_popularity desc;
