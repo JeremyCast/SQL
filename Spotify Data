@@ -37,9 +37,10 @@ select * from bit_db.SpotifyData;
 
 select sum(artist_name) from bit_db.Spotifydata;
 
--- I determined the average energy, loudness, tempo, instrumentalmess, dance ability, and popularity by artist and track. 
--- I listed the results in order of their popularity.
+-- I determined the average energy, loudness, tempo, instrumentalmess, dance ability of the top 10 most popular tracks
 
 select artist_name, track_name, avg(energy),avg(loudness),avg(tempo), avg(instrumentalness), avg(danceability), avg(popularity) from bit_db.Spotifydata
 group by artist_name, track_name
-order by popularity;
+order by popularity desc
+limit 10;
+
